@@ -3,6 +3,7 @@
     <h3 class="text-primary text-center">All Todos</h3>
     <div class="container">
       <AddTodo></AddTodo>
+      <FilterTodo></FilterTodo>
       <div class="row">
         <div class="col-md-4 my-3" v-for="todo in getTodos" :key="todo.id">
           <div class="card bg-primary text-white">
@@ -19,11 +20,13 @@
 </template>
 
 <script>
+import FilterTodo from './FilterTodo'
 import AddTodo from './AddTodo'
 import { mapActions, mapGetters } from "vuex";
 
 export default {
-  components: { AddTodo },
+  components: {
+    FilterTodo, AddTodo },
   computed: {
     ...mapGetters(["getTodos"])
   },
