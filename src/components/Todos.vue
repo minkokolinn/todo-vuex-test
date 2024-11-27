@@ -6,8 +6,9 @@
       <div class="row">
         <div class="col-md-4 my-3" v-for="todo in getTodos" :key="todo.id">
           <div class="card bg-primary text-white">
-            <div class="card-body">
-              {{ todo.title }}
+            <div class="card-body d-flex justify-content-between">
+              <span>{{ todo.title }}</span>
+              <span @click="deleteTodo(todo.id)" class="deleteBtn"><i class="bi bi-trash-fill text-danger"></i></span>
             </div>
           </div>
         </div>
@@ -27,7 +28,7 @@ export default {
     ...mapGetters(["getTodos"])
   },
   methods: {
-    ...mapActions(["fetchTodos"])
+    ...mapActions(["fetchTodos","deleteTodo"])
   },
   mounted() {
     this.fetchTodos()
@@ -35,4 +36,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+span.deleteBtn{
+  cursor: pointer;
+}
+</style>
