@@ -1,14 +1,15 @@
 <template>
   <h1>Hello World</h1>
-  <h2>Name - {{ $store.state.Todos.name }}</h2>
+  <Todos></Todos>
 </template>
 
 <script>
 
+import Todos from './components/Todos'
 export default {
   name: 'App',
   components: {
-    
+    Todos,
   }
 }
 </script>

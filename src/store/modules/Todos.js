@@ -1,8 +1,25 @@
 export default {
     state: {
-        name:"Milton Techie"
+        todos:[
+            {
+                title:"HTML",
+                id:1
+            },
+            {
+                title:"CSS",
+                id:2
+            },
+            {
+                title:"Javascript",
+                id:3
+            }
+        ]
     },
-    getters: {},
+    getters: {
+        getTodos(state){
+            return state.todos
+        }
+    },
     mutations: {},
     actions: {}
 }
