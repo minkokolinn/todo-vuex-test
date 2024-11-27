@@ -1,6 +1,7 @@
 <template>
   <div>
     <h3 class="text-primary text-center">All Todos</h3>
+    <button @click="fetchTodos" class="btn btn-success">Fetch API</button>
     <div class="container">
       <div class="row">
         <div class="col-md-4 my-3" v-for="todo in getTodos" :key="todo.id">
@@ -13,16 +14,22 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   computed: {
-    ...mapGetters(["getTodos"]),
+    ...mapGetters(["getTodos"])
   },
-  mounted() {},
+  methods: {
+    ...mapActions(["fetchTodos"])
+  },
+  mounted() {
+    
+  },
 };
 </script>
 
