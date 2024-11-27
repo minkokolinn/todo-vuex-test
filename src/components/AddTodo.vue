@@ -14,7 +14,8 @@ export default {
     data(){
         return {
             newTodo:{
-                title:""
+                title:"",
+                completed:false
             }
         }
     },
